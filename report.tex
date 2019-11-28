@@ -1,0 +1,301 @@
+% --------------------------------------------------------------------------
+% Report template for BIR projects
+% Report template with support for Portuguese and English languages
+% Change language {brazil or english} in \documentclass as per the examples
+% This template has support for the ABNT citing format
+% 
+% Original version: jan/2019
+% https://github.com/
+% 
+% Based on ABNTEX2 and the thesis template
+% --------------------------------------------------------------------------
+\documentclass[
+%\DeclareUnicodeCharacter{200B}{}
+% --------------------------------------------------------------------------
+% classe memoir . options                                                   
+12pt,					% tamanho da fonte
+openright,				% cap. começam em pág ímpar (ins pág vazia caso preciso)
+twoside,				% para impressão em verso e anverso. Oposto a oneside
+a4paper,				% tamanho do papel
+% --------------------------------------------------------------------------
+% classe abntex2 . options                                                  
+%chapter=TITLE,			% títulos de capítulos convertidos em letras maiúsc.
+%section=TITLE,			% títulos de seções convertidos em letras maiúsc.
+%subsection=TITLE,		% títulos de subseções convertidos em letras maiúsc.
+%subsubsection=TITLE,	% títulos de subsubseções convertidos em letras maiúsc.
+% --------------------------------------------------------------------------
+% Opções de IDIOMA do pacote babel                                          
+english,
+brazil
+]{ABNT/abntex2_report}
+% --------------------------------------------------------------------------
+% Pacotes básicos    
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{lipsum}	
+\usepackage[brazilian,hyperpageref]{backref} % páginas com citações na bibliog.
+%\usepackage[alf,abnt-etal-list=0,abnt-etal-cite=3,abnt-emphasize=bf]{abntex2cite}
+\usepackage[alf]{abntex2cite}
+%	
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+%\usepackage{subfig}
+\usepackage{supertabular}       % tabela na capa do documento
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{adjustbox}
+\usepackage{amssymb,amsmath,mathrsfs}
+\usepackage{algorithm,algpseudocode}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{tocloft}
+\usepackage{threeparttable}
+\usepackage{etoolbox}
+\usepackage[normalem]{ulem}
+\usepackage{yaacro}
+\usepackage[none]{verlab}
+%\usepackage{fontspec}
+%\setmainfont{Helvetica Light}
+\usepackage{lscape}
+%\usepackage[graphicx]{realboxes}
+\usepackage{rotating}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{dirtytalk}
+\usepackage{pdfpages}
+\usepackage{threeparttable}
+\usepackage{hyperref}
+%\hypersetup{draft}
+\usepackage{float}
+\DeclareUnicodeCharacter{200B}{}
+% --------------------------------------------------------------------------%
+% Configurações do PDF final                                                
+\definecolor{blue}{RGB}{41,5,195}
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={\@author},
+	pdfsubject={\@title},
+	%pdfsubject={\imprimirpreambulo},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{abntex2}{\imprimirpalavraschave}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      	% color of file links
+	urlcolor=blue,
+	bookmarksdepth=4
+}
+%\makeatother
+% --------------------------------------------------------------------------
+% Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
+% em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
+%\makeatletter
+\setlength{\@fptop}{5pt} % Set distance from top of page to first float
+\makeatother
+% --------------------------------------------------------------------------
+% Formatação                                                                
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\apptocmd{\thebibliography}{\justifying}{}{} 
+\renewcommand{\ABNTEXsectionfont}{\bfseries}
+\titlespacing*{\chapter}{0pt}{0pt}{12pt}
+\titlespacing*{\section}{0pt}{6pt}{6pt}
+\titlespacing*{\subsection}{0pt}{6pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{6pt}{6pt}
+% --------------------------------------------------------------------------
+% Rearranja os finais de cada estrutura                                     
+\algrenewtext{EndWhile}{\algorithmicend\ \algorithmicwhile}
+\algrenewtext{EndFor}{\algorithmicend\ \algorithmicfor}
+\algrenewtext{EndIf}{\algorithmicend\ \algorithmicif}
+\algrenewtext{EndFunction}{\algorithmicend\ \algorithmicfunction}
+% --------------------------------------------------------------------------
+% Espaçamentos entre linhas e parágrafos                                    
+\setlength{\parindent}{1.3cm} % linha
+\setlength{\parskip}{0.2cm} % parágrafo, tente também \onelineskip
+% --------------------------------------------------------------------------
+% Informações de dados para CAPA e FOLHA DE ROSTO                           
+\prodtecnica{011 / 2019}
+\titulo{Estudo de viabilidade técnica-econômica para automação de operações com ROV}
+\tiporelatorio{Parcial} 
+\nomeprojeto{ManiSub}
+\outrossubtitulos{~} % opcional
+\autores{
+	Oberdan Oliveira\\
+	Rebeca Tourinho\\
+	Cristiano Dal'Pai\\
+	Christian Koch\\
+	Lidia Ruppert\\
+	Gabriel Pinho\\
+	Marco Reis\
+}
+\newcommand{\autoresexternos}{
+	César Lima\\
+	%John Marston\\
+	%Frank West\
+}
+\local{Salvador\\Bahia, Brasil}
+\data{Maio de 2019}
+\classificacao{( ) Confidencial  (X) Restrito  ( )  Uso Interno  ( ) Público}
+\revisao{01}
+\tabelacutter{000} 
+\palavraschave{1. Manipulator. 2. Mobile Vehicle. 3. Computer vision.}
+\classificacaoassunto{000} % Número de Classificação do assunto 
+%\parceirologo{logos/x.png}
+% --------------------------------------------------------------------------
+% Finalização das configurações da capa                                     
+% Acrônimos :: Chamar no texto como \ac{DoF}                                
+\begin{acgroupdef}[list=acronyms]
+	\acdef{DoF}{Degrees of Freedom}
+	\acdef{PoC}{Proof of Concept, em português Prova de Conceito}
+	\acdef{UUV}{Unmanned Underwater Vehicle, em português Veículo Subaquático Não-tripulado}
+	\acdef{AUV}{Autonomous Underwater Vehicle, em português Veículo Subaquático Autônomo}
+	\acdef{UVM}{Unmanned Vehicle Morphing}
+	\acdef{SLAM}{Simultaneous Localization and Mapping}
+	\acdef{ROV}{Remotely Operated Vehicle}
+	\acdef{SOTA}{Study Of The Art}
+\end{acgroupdef}
+% --------------------------------------------------------------------------
+% Criação do sumário
+\makeindex
+%
+\begin{document}
+	\frenchspacing
+	\imprimircapa
+	\imprimircatalografica
+% --------------------------------------------------------------------------
+% Sumário executivo                                                         
+	\ABNTEXchapterfont\large\textbf{\execsummarytitlename}
+	\begin{flushleft}
+		\normalsize
+		\justify
+		\normalfont
+		O projeto Automação de Manipuladores, também conhecido como \textbf{ManiSub} se configura sob o Termo de Cooperação Tecnológica nº 003/2014 entre o Serviço Nacional de Aprendizagem Industrial, Departamento Regional da Bahia - Senai/DR/BA e a Associação Brasileira de Pesquisa e Inovação Industrial - EMBRAPII, sendo estes fomentadores do projeto. Diante disso, formou-se um termo de parceria de natureza técnica e financeira com a empresa Petrobras e o SENAI/DR/BA totalizando R\$ 1.400.000,98 como recursos financeiros para a realização do devido projeto. O mesmo foi assinado em 25 de dezembro de 2018 e esta data foi considerada como a data inicial do projeto, no entanto na reunião de kick-off do projeto foi considerada para o início técnico do projeto o dia 07 de janeiro de 2018. O prazo de execução planejado é de 10 meses.
+	\end{flushleft}
+	\clearpage
+% --------------------------------------------------------------------------
+% Resumo e abstract                                                         
+	\ABNTEXchapterfont\large\textbf{\resumoatitlename}
+	\begin{flushleft}
+		\normalsize
+		\justify
+		\normalfont
+		O relatório tem a abrangência de apresentar o \textit{status} atual do projeto durante a fase conceitual apresentando o desenvolvimento da	Automação de Operações com ROV, tendo como objetivo projetar e construir uma prova de conceito para analisar a viabilidade técnica-econômica de automatizar operações submarinas com manipuladores de ROV. Este desenvolvimento faz parte de um projeto maior que estabelece um roadmap da tecnologia aplicado à indústria Óleo \& Gás com o objetivo de automatizar as operações de um ROV. Dentro deste contexto é apresentado duas linhas de ação: uma direcionada para o desenvolvimento de um protótipo que forneça nuvem de pontos de alta resolução para identificar, com maior exatidão, estruturas submarinas, através da aquisição e cruzamento de dados de sensores diversos; e outra, para analisar através de uma prova de conceito e do estado da arte (SOTA) a viabilidade técnica e econômica da automatização de manipuladores em veículos submarinos de operação remota (\textit{\acs{ROV}s}). Esta segunda parte é o objeto deste projeto, em específico.
+	\end{flushleft}
+	\vspace*{1cm}
+	\newpage
+	\ABNTEXchapterfont\large\textbf{\resumobtitlename}
+	\begin{flushleft}
+		\normalsize
+		\justify
+		\normalfont
+		The report has a scope of presentation of the current status of the project during a conceptual phase presenting the development of Operations Automation with ROV, aiming to design and analyze a strategy of automation of underwater operations with ROV manipulators. This development is part of a large design for the road to the oil industry and the production of automation of the operations of the ROV. The following is the map of the protected model for microsoft in the resolution of high resolution, using subtextures, text and the symphony, and method of the caption, and method of networks from diverse; and another, for study through a proof of the concept and state of the commercial software (SOTA) a technique and the automated of automation of vehicles in submarines of portable remote (ROVs). This second part is the object of this project, in particular. 	
+	\end{flushleft}
+	\clearpage
+% --------------------------------------------------------------------------
+% Lista de figuras                                                          
+	\begin{flushleft}
+		\ABNTEXchapterfont\Large\textbf{\MakeUppercase\listadefigurasname}
+	\end{flushleft}
+	\vspace*{-36pt}
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\normalsize
+	\listoffigures*
+	\cleardoublepage
+% --------------------------------------------------------------------------
+% Lista de tabelas                                                          
+	\begin{flushleft}
+		\ABNTEXchapterfont\Large\textbf{\MakeUppercase\listadetabelasname}
+	\end{flushleft}
+	\vspace*{-36pt}
+	\pdfbookmark[0]{\listtablename}{lot}
+	\normalsize
+	\listoftables*
+	\cleardoublepage
+% --------------------------------------------------------------------------
+% Lista de símbolos e abreviaturas                                          
+	\begin{flushleft}
+	\ABNTEXchapterfont\Large\textbf{\MakeUppercase\listadesimbolsabrevtitlename}
+		\noindent
+		\vspace*{-06pt}
+		\pdfbookmark[0]{\listadesiglasname}{lot}
+		\normalsize
+		\normalfont
+		\aclist[list=acronyms]
+	\end{flushleft}
+	\newpage
+% --------------------------------------------------------------------------
+% Tabela de conteúdo                                                        	
+	\begin{flushleft}
+		\ABNTEXchapterfont\Large\textbf{\MakeUppercase\glosariotitlename}
+	\end{flushleft}
+	%\pagebreak
+	\vspace*{-36pt}
+	\pdfbookmark[0]{\contentsname}{toc}
+	\normalsize
+	\normalfont
+	\tableofcontents*
+	\justify
+% --------------------------------------------------------------------------
+% Formatação, remover espaço depois dos títulos
+	\setlength\beforechapskip{-24pt}
+	\setlength\afterchapskip{12pt}
+	\textual
+	\pagestyle{plain}
+	\normalsize
+	\justify
+	\normalfont
+% --------------------------------------------------------------------------
+% Conteúdo do relatório  
+	\include{sections/01introd}
+	\include{sections/02rov}
+	%\include{sections/02manisub}
+	\include{sections/02manisubs}
+	%\include{sections/02anaviab}
+	%\include{sections/03conceito}
+	%\include{sections/04espfunc}
+	%\include{sections/05abranghw}
+	%\include{sections/06abrangsw}
+	%\include{sections/07abrangconf}
+	%\include{sections/08espinterf}
+	%\include{sections/09testes}
+	%\include{sections/10trl}
+	\include{sections/11rsk}
+	%\include{sections/12abrangconhec}
+	\include{sections/13conclu}
+% --------------------------------------------------------------------------
+% Referências
+	\cleardoublepage
+	\titleformat{\chapter}[display]{\vspace*{-24pt}\ABNTEXchapterfont\large\bfseries}{\chaptertitlename\ \thechapter}{12pt}{\Large}
+	\bibliography{bibliography}
+% --------------------------------------------------------------------------
+% Apêndices
+	\apendices
+	\justify
+	%
+	\chapter{Questões de abordagem à pesquisa}
+	\label{ape:quest}
+	\includepdf[pages={{},-}]{appendix/listquest.pdf}
+	%
+	%\chapter{Simulação}
+	%\lipsum[1] % Comentar e adicionar apêndice aqui
+	%
+	%\chapter{Prova do Conceito}
+	%\includepdf[pages={{},-}]{appendix/poc.pdf}
+% --------------------------------------------------------------------------
+% Anexos                                                                     
+	\anexos
+	\justify
+	%
+	\chapter{Relatório de busca de anterioridade}
+	\label{ann:relant}
+	\includepdf[pages={{},-}]{annex/manisubanterioridade.pdf}
+	%
+\end{document} 
