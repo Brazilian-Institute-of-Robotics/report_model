@@ -788,9 +788,9 @@
 		
 		\vspace*{-1cm}
 		
-		\begin{flushright}
-			\textbf{\footnotesize \techprodsimple - \imprimirprodtecnica}
-		\end{flushright}
+		%\begin{flushright}
+			%\textbf{\footnotesize \techprodsimple - \imprimirprodtecnica}
+		%\end{flushright}
 		
 		\centering
 		\vspace*{1cm}

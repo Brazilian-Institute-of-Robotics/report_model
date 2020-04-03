@@ -122,35 +122,35 @@ brazil
 \setlength{\parskip}{0.2cm} % parágrafo, tente também \onelineskip
 % --------------------------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO                           
-\prodtecnica{011 / 2019}
-\titulo{Estudo de viabilidade técnica-econômica para automação de operações com ROV}
+\prodtecnica{001 / 2020}
+\titulo{Manipuladores inteligentes}
 \tiporelatorio{Parcial} 
-\nomeprojeto{ManiSub}
+\nomeprojeto{Projeto}
 \outrossubtitulos{~} % opcional
 \autores{
-	Oberdan Oliveira\\
-	Rebeca Tourinho\\
-	Cristiano Dal'Pai\\
-	Christian Koch\\
-	Lidia Ruppert\\
-	Gabriel Pinho\\
-	Marco Reis\
+	Moudu Zir\\
+	Linki Terri\\
+	Zakka Santi\\
+	Toldu Jamo\\
+	Maroc Sieru\
 }
 \newcommand{\autoresexternos}{
-	César Lima\\
-	%John Marston\\
-	%Frank West\
+	John Marston\\
+	Frank West\
 }
 \local{Salvador\\Bahia, Brasil}
-\data{Maio de 2019}
+\data{Abril de 2020}
 \classificacao{( ) Confidencial  (X) Restrito  ( )  Uso Interno  ( ) Público}
 \revisao{01}
 \tabelacutter{000} 
-\palavraschave{1. Manipulator. 2. Mobile Vehicle. 3. Computer vision.}
+\palavraschave{1. Manipulator. 2. Simulation. 3. Computer vision.}
 \classificacaoassunto{000} % Número de Classificação do assunto 
 %\parceirologo{logos/x.png}
-% --------------------------------------------------------------------------
-% Finalização das configurações da capa                                     
+%------------------------------------------------------------------
+% Finalização das configurações da capa
+%
+%
+%------------------------------------------------------------------              
 % Acrônimos :: Chamar no texto como \ac{DoF}                                
 \begin{acgroupdef}[list=acronyms]
 	\acdef{DoF}{Degrees of Freedom}
@@ -161,6 +161,9 @@ brazil
 	\acdef{SLAM}{Simultaneous Localization and Mapping}
 	\acdef{ROV}{Remotely Operated Vehicle}
 	\acdef{SOTA}{Study Of The Art}
+	%
+	%
+	%
 \end{acgroupdef}
 % --------------------------------------------------------------------------
 % Criação do sumário
@@ -177,26 +180,37 @@ brazil
 		\normalsize
 		\justify
 		\normalfont
-		O projeto Automação de Manipuladores, também conhecido como \textbf{ManiSub} se configura sob o Termo de Cooperação Tecnológica nº 003/2014 entre o Serviço Nacional de Aprendizagem Industrial, Departamento Regional da Bahia - Senai/DR/BA e a Associação Brasileira de Pesquisa e Inovação Industrial - EMBRAPII, sendo estes fomentadores do projeto. Diante disso, formou-se um termo de parceria de natureza técnica e financeira com a empresa Petrobras e o SENAI/DR/BA totalizando R\$ 1.400.000,98 como recursos financeiros para a realização do devido projeto. O mesmo foi assinado em 25 de dezembro de 2018 e esta data foi considerada como a data inicial do projeto, no entanto na reunião de kick-off do projeto foi considerada para o início técnico do projeto o dia 07 de janeiro de 2018. O prazo de execução planejado é de 10 meses.
+		O projeto de Manipuladores - Desafio.2, também conhecido como \textbf{xxxxx} se configura sob o Programa de Formação de Novos Talentos do Serviço Nacional de Aprendizagem Industrial, Departamento Regional da Bahia - Senai/DR/BA, sendo este o principal fomentador do programa.
+
+		O projeto foi considerado como início técnico do projeto o dia 00 de bolsoneiro de 2020. 
+
+		O prazo de execução planejado é de xx meses.
 	\end{flushleft}
 	\clearpage
-% --------------------------------------------------------------------------
+%------------------------------------------------------------------
 % Resumo e abstract                                                         
 	\ABNTEXchapterfont\large\textbf{\resumoatitlename}
 	\begin{flushleft}
 		\normalsize
 		\justify
 		\normalfont
-		O relatório tem a abrangência de apresentar o \textit{status} atual do projeto durante a fase conceitual apresentando o desenvolvimento da	Automação de Operações com ROV, tendo como objetivo projetar e construir uma prova de conceito para analisar a viabilidade técnica-econômica de automatizar operações submarinas com manipuladores de ROV. Este desenvolvimento faz parte de um projeto maior que estabelece um roadmap da tecnologia aplicado à indústria Óleo \& Gás com o objetivo de automatizar as operações de um ROV. Dentro deste contexto é apresentado duas linhas de ação: uma direcionada para o desenvolvimento de um protótipo que forneça nuvem de pontos de alta resolução para identificar, com maior exatidão, estruturas submarinas, através da aquisição e cruzamento de dados de sensores diversos; e outra, para analisar através de uma prova de conceito e do estado da arte (SOTA) a viabilidade técnica e econômica da automatização de manipuladores em veículos submarinos de operação remota (\textit{\acs{ROV}s}). Esta segunda parte é o objeto deste projeto, em específico.
+		%resumo aqui
+		%
+		%
+		%
 	\end{flushleft}
 	\vspace*{1cm}
 	\newpage
+	%
 	\ABNTEXchapterfont\large\textbf{\resumobtitlename}
 	\begin{flushleft}
 		\normalsize
 		\justify
 		\normalfont
-		The report has a scope of presentation of the current status of the project during a conceptual phase presenting the development of Operations Automation with ROV, aiming to design and analyze a strategy of automation of underwater operations with ROV manipulators. This development is part of a large design for the road to the oil industry and the production of automation of the operations of the ROV. The following is the map of the protected model for microsoft in the resolution of high resolution, using subtextures, text and the symphony, and method of the caption, and method of networks from diverse; and another, for study through a proof of the concept and state of the commercial software (SOTA) a technique and the automated of automation of vehicles in submarines of portable remote (ROVs). This second part is the object of this project, in particular. 	
+		%abstract aqui
+		%
+		%
+		%
 	\end{flushleft}
 	\clearpage
 % --------------------------------------------------------------------------
@@ -254,22 +268,13 @@ brazil
 	\normalfont
 % --------------------------------------------------------------------------
 % Conteúdo do relatório  
-	\include{sections/01introd}
-	\include{sections/02rov}
-	%\include{sections/02manisub}
-	\include{sections/02manisubs}
-	%\include{sections/02anaviab}
-	\include{sections/03conceito}
-	\include{sections/04espfunc}
-	\include{sections/05abranghw}
-	\include{sections/06abrangsw}
-	%\include{sections/07abrangconf}
-	%\include{sections/08espinterf}
-	%\include{sections/09testes}
-	%\include{sections/10trl}
-	\include{sections/11rsk}
-	%\include{sections/12abrangconhec}
-	\include{sections/13conclu}
+	\include{sections/01introducao}
+	\include{sections/02conceito}
+	\include{sections/03desenvolvimento}
+	\include{sections/04resultados}
+	\include{sections/05conhecimento}
+	\include{sections/06conhecimento}
+	\include{sections/07conclusao}
 % --------------------------------------------------------------------------
 % Referências
 	\cleardoublepage
@@ -281,21 +286,23 @@ brazil
 	\justify
 	%
 	\chapter{Questões de abordagem à pesquisa}
-	\label{ape:quest}
-	\includepdf[pages={{},-}]{appendix/listquest.pdf}
+	\label{apend:quest}
+	%\includepdf[pages={{},-}]{appendix/listquest.pdf}
+	\lipsum[1] % Comentar e adicionar apêndice aqui
 	%
-	%\chapter{Simulação}
-	%\lipsum[1] % Comentar e adicionar apêndice aqui
-	%
-	%\chapter{Prova do Conceito}
-	%\includepdf[pages={{},-}]{appendix/poc.pdf}
+	\chapter{Um assunto importante}
+	\label{apend:assunto}
+	\lipsum[1] % Comentar e adicionar apêndice aqui
+	
+
 % --------------------------------------------------------------------------
 % Anexos                                                                     
 	\anexos
 	\justify
 	%
-	\chapter{Relatório de busca de anterioridade}
+	\chapter{Outro assunto importante}
 	\label{ann:relant}
-	\includepdf[pages={{},-}]{annex/manisubanterioridade.pdf}
+	%\includepdf[pages={{},-}]{annex/manisubanterioridade.pdf}
+	\lipsum[1] % Comentar e adicionar apêndice aqui
 	%
 \end{document} 
