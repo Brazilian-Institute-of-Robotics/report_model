@@ -15,7 +15,8 @@ The report consists of 7 chapters.
 ## Installing *TexLive*
 To use this repo it is necessary to install *TexLive*.
     
-'''sh
+```sh
+
     sudo add-apt-repository ppa:jonathonf/texlive
         
     sudo apt update
@@ -25,12 +26,14 @@ To use this repo it is necessary to install *TexLive*.
     tlmgr install abntex2
         
     tlmgr update abntex2
-'''
+
+```
 
 
 ### All cleaning *TexLive* (if necessary)
 
-'''sh
+```sh
+
     sudo apt-get install ppa-purge
 
     sudo ppa-purge ppa:jonathonf/texlive
@@ -38,6 +41,7 @@ To use this repo it is necessary to install *TexLive*.
     sudo apt-get autoremove --purge tex-common texlive-base texlive-binaries texlive-common texlive-doc-base texlive-latex-base texlive-latex-base-doc
 
     sudo apt-get autoclean
-'''
+
+```
 
 
